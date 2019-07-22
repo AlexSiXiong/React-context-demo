@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   render() {
+      console.log('App')
     return (
         <div>
           <nContext.Provider value={this.state.x}>
@@ -37,8 +38,10 @@ class App extends React.Component {
 }
 
 const Child1 = () => (
+
   <div className='bordered'>
       Child 1
+      {console.log('child1')}
       <Child2 />
   </div>
 )
@@ -46,6 +49,8 @@ const Child1 = () => (
 const Child2 = () => (
     <div className='bordered'>
       Child 2
+
+        {console.log('child2')}
       <Child3/>
     </div>
 )
@@ -53,6 +58,8 @@ const Child2 = () => (
 const Child3 = () => (
     <div className='bordered'>
       Child 3
+
+        {console.log('child3')}
       <nContext.Consumer>
         {x => <Child4 n4={x.n} setN={x.setN} />}
       </nContext.Consumer>
@@ -61,6 +68,8 @@ const Child3 = () => (
 
 const Child4 = (props) => (
   <div className='bordered'>
+
+      {console.log('child4')}
     Child 4 gets number from App through 'Context', {props.n4}
     <button onClick={props.setN}>Click me +1</button>
   </div>
