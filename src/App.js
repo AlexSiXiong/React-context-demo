@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import "./styles.css";
 
 
@@ -68,7 +67,6 @@ const Child3 = () => (
 
 const Child4 = (props) => (
   <div className='bordered'>
-
       {console.log('child4')}
     Child 4 gets number from App through 'Context', {props.n4}
     <button onClick={props.setN}>Click me +1</button>
