@@ -1,13 +1,11 @@
 import React from 'react';
 import "./styles.css";
 
-
 const nContext = React.createContext();
 
 class App extends React.Component {
   constructor() {
     super()
-
     this.state = {
       x: {
         n: 10,
@@ -48,7 +46,6 @@ const Child1 = () => (
 const Child2 = () => (
     <div className='bordered'>
       Child 2
-
         {console.log('child2')}
       <Child3/>
     </div>
@@ -57,7 +54,6 @@ const Child2 = () => (
 const Child3 = () => (
     <div className='bordered'>
       Child 3
-
         {console.log('child3')}
       <nContext.Consumer>
         {x => <Child4 n4={x.n} setN={x.setN} />}
@@ -74,3 +70,5 @@ const Child4 = (props) => (
 )
 
 export default App;
+
+

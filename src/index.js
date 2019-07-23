@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App2 from './App2'
+import "./styles.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Container = () => (
+    <div>
+        <h3 className='App'>Button in box 2 only render component 'child 4'</h3>
+        <h3 className='App'>Checking Console</h3>
+        <h4>Box1</h4>
+        <App />
+        <h4>Box2</h4>
+        <App2 />
+    </div>
+)
+ReactDOM.render(<Container />, document.getElementById('root'));
